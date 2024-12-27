@@ -1,141 +1,76 @@
 import React from "react";
-import {Plus_Jakarta_Sans} from 'next/font/google';
+import Link from "next/link";
 
-const plusJakartaSans = Plus_Jakarta_Sans ({subsets:["latin"]})
+export default function Footer() {
+  return (
+    <footer className="relative flex flex-col items-center space-y-6 px-6 w-full bg-white py-8">
+      {/* Top Section */}
+      <div className="w-full flex flex-col lg:flex-row items-start justify-between gap-8">
+        {/* Brand Section */}
+        <div className="brand flex flex-col space-y-3 w-full lg:w-1/3">
+          <h1 className="text-blue-600 text-3xl font-extrabold text-center lg:text-left">
+            MORENT
+          </h1>
+          <p className="text-gray-600 text-center lg:text-left max-w-md">
+            Our vision is to provide convenience
+            <br />
+            and help increase your sales business.
+          </p>
+        </div>
 
-const Footer = () => {
-    return (
-      <footer className={`${plusJakartaSans.className}bg-white border-t border-gray-300 w-[1440px] h-[110px]`}>
-        <div className="w-[1440px] mx-auto px-6 py-8 flex flex-col sm:flex-row justify-between">
-          {/* Left Section */}
-          <div className="mb-8 sm:mb-0">
-            <h1 className="text-blue-600 text-2xl font-bold">MORENT</h1>
-            <p className="text-gray-600 mt-2 w-[285px] h-[48px]">
-              Our vision is to provide convenience and help increase your sales
-              business.
-            </p>
+        {/* Links Section */}
+        <div className="links flex flex-wrap justify-center lg:justify-end gap-8 w-full lg:w-2/3 mb-5">
+          <div className="link-group">
+            <h2 className="font-semibold text-xl">About</h2>
+            <ul className="space-y-4 text-sm mt-4">
+              <li>How it works</li>
+              <li>Featured</li>
+              <li>Partnership</li>
+              <li>Business Relations</li>
+            </ul>
           </div>
-  
-          {/* Links Section */}
-          <div className="flex flex-wrap justify-between sm:gap-x-16 px-28">
-            {/* About Links */}
-            <div>
-              <h2 className="text-[#1A202C] font-semibold">About</h2>
-              <ul className="text-[#13131399] mt-5 space-y-5">
-                <li>
-                  <a href="/how-it-works" className="hover:text-blue-600">
-                    How it works
-                  </a>
-                </li>
-                <li>
-                  <a href="/featured" className="hover:text-blue-600">
-                    Featured
-                  </a>
-                </li>
-                <li>
-                  <a href="/partnership" className="hover:text-blue-600">
-                    Partnership
-                  </a>
-                </li>
-                <li>
-                  <a href="/business-relation" className="hover:text-blue-600">
-                    Business Relation
-                  </a>
-                </li>
-              </ul>
-            </div>
-  
-            {/* Community Links */}
-            <div>
-              <h2 className="text-[#1A202C] font-semibold">Community</h2>
-              <ul className="text-[#13131399] mt-5 space-y-5">
-                <li>
-                  <a href="/events" className="hover:text-blue-600">
-                    Events
-                  </a>
-                </li>
-                <li>
-                  <a href="/blog" className="hover:text-blue-600">
-                    Blog
-                  </a>
-                </li>
-                <li>
-                  <a href="/podcast" className="hover:text-blue-600">
-                    Podcast
-                  </a>
-                </li>
-                <li>
-                  <a href="/invite" className="hover:text-blue-600">
-                    Invite a friend
-                  </a>
-                </li>
-              </ul>
-            </div>
-  
-            {/* Socials Links */}
-            <div>
-              <h2 className="text-[#1A202C] font-semibold">Socials</h2>
-              <ul className="text-[#13131399] mt-5 space-y-5">
-                <li>
-                  <a
-                    href="https://discord.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-blue-600"
-                  >
-                    Discord
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://instagram.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-blue-600"
-                  >
-                    Instagram
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://twitter.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-blue-600"
-                  >
-                    Twitter
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://facebook.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-blue-600"
-                  >
-                    Facebook
-                  </a>
-                </li>
-              </ul>
-            </div>
+          <div className="link-group">
+            <h2 className="font-semibold text-xl">Community</h2>
+            <ul className="space-y-4 text-sm mt-4">
+              <li>Events</li>
+              <li>Blog</li>
+              <li>Podcast</li>
+              <li>Invite Friends</li>
+            </ul>
+          </div>
+          <div className="link-group">
+            <h2 className="font-semibold text-xl">Socials</h2>
+            <ul className="space-y-4 text-sm mt-4">
+              <li>
+                <Link href="https://www.discord.com">Discord</Link>
+              </li>
+              <li>
+                <Link href="https://www.instagram.com">Instagram</Link>
+              </li>
+              <li>
+                <Link href="https://www.facebook.com">Facebook</Link>
+              </li>
+              <li>
+                <Link href="https://www.twitter.com">Twitter</Link>
+              </li>
+            </ul>
           </div>
         </div>
-  
-        {/* Bottom Section */}
-        <div className="border-t mr-14 ml-14 border-gray-300">
-          <div className="w-[1440px] font-normal mx-auto  py-4 flex flex-col sm:flex-row justify-between text-[#1A202C] text-sm">
-            <p>©2022 MORENT. All rights reserved</p>
-            <div className="flex space-x-11  font-semibold">
-              <a href="/privacy-policy" className="font-normal hover:text-blue-600">
-                Privacy & Policy
-              </a>
-              <a href="/terms-condition" className=" font-normal pr-28 hover:text-blue-600">
-                Terms & Condition
-              </a>
-            </div>
-          </div>
+      </div>
+
+      {/* Divider */}
+      <div className="border-t w-full border-gray-200"></div>
+
+      {/* Bottom Section */}
+      <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-4">
+        <div className="text-sm text-center lg:text-left w-full lg:w-auto">
+          <p className="font-bold">&copy; 2022 MORENT. All rights reserved.</p>
         </div>
-      </footer>
-    );
-  }
-export default Footer  
+        <div className="policies flex space-x-6 justify-center lg:justify-end w-full lg:w-auto">
+          <p className="font-bold text-sm">Privacy Policy</p>
+          <p className="font-bold text-sm">Terms & Conditions</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
